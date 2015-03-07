@@ -6,5 +6,5 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan(basePackages = "eu.pick")
-class AppConfig {
+public class AppConfig {
 }
