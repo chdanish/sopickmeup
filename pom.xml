@@ -78,4 +78,7 @@
 			</build>
 		</profile>
 	</profiles>
+	<organization>
+		<name>Powered By RANOP</name>
+	</organization>
 </project>
