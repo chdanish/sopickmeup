@@ -34,7 +34,7 @@ public class AppInitializer implements WebApplicationInitializer {
      				servletContext.addFilter("springSecurityFilterChain", DelegatingFilterProxy.class);
      		springSecurityFilterChain.addMappingForUrlPatterns(null, false, "/*");
      		
-     		// Register Spring Social filter so that we can disconnect from providers
+     // Register Spring Social filter so that we can disconnect from providers
      		FilterRegistration.Dynamic hiddenHttpMethodFilter = 
      				servletContext.addFilter("hiddenHttpMethodFilter", HiddenHttpMethodFilter.class);
      		hiddenHttpMethodFilter.addMappingForUrlPatterns(null, false, "/*");
