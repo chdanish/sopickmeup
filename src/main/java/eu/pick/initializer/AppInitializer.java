@@ -44,7 +44,7 @@ public class AppInitializer implements WebApplicationInitializer {
     private AnnotationConfigWebApplicationContext getContext() {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         
-        context.register(eu.pick.config.AppConfig.class);
+        context.register(eu.pick.config.ApplicationContext.class);
         
       //  context.setConfigLocation(CONFIG_LOCATION);
         context.setDisplayName("SoPickMeUp");
