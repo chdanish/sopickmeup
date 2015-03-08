@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration 
-@ComponentScan(basePackages = {"org.krams"})
+@ComponentScan(basePackages = {"eu.pick"})
 @EnableWebMvc
 @Import({DataConfig.class, ThymeleafConfig.class, SocialConfig.class, SecurityConfig.class})
 @ImportResource({"classpath:trace-context.xml"})
