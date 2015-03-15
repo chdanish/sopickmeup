@@ -51,9 +51,11 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
 		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
+		System.out.print("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
 		
 		String classpath = System.getProperty("java.class.path");
 	    System.out.println("danish"+classpath);
+	    System.out.print("danish"+classpath);
 		
 		em.setPersistenceXmlLocation("classpath*:META-INF/persistence.xml");
 		//em.setPersistenceXmlLocation("persistence.xml");
