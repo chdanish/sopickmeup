@@ -16,7 +16,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("org.krams.repository")
+@EnableJpaRepositories("eu.pick.repository")
 public class DataConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired 
