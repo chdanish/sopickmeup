@@ -5,6 +5,7 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -12,11 +13,13 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("eu.pick.repository")
+
 public class DataConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired 
@@ -47,8 +50,15 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 		vendor.setShowSql(false);
 		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaa");
+		
+		String classpath = System.getProperty("java.class.path");
+	    System.out.println("danish"+classpath);
+		
 		em.setPersistenceXmlLocation("classpath*:META-INF/persistence.xml");
+		//em.setPersistenceXmlLocation("persistence.xml");
 		em.setPersistenceUnitName("hibernatePersistenceUnit");
+		//System.out.println("Danish:"+em.getPersistenceXmlLocation());
 		em.setDataSource(dataSource());
 		em.setJpaVendorAdapter(vendor);
 		return em;
