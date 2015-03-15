@@ -465,6 +465,10 @@
 
         </executions> -->
         <configuration>
+        		<echo message="compile classpath: ${compile_classpath}"/>
+                <echo message="runtime classpath: ${runtime_classpath}"/>
+                <echo message="test classpath:    ${test_classpath}"/>
+                <echo message="plugin classpath:  ${plugin_classpath}"/>
         	<failOnMissingWebXml>false</failOnMissingWebXml>
             <echo message="plugin config"/>
             <outputDirectory>webapps</outputDirectory>
