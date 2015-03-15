@@ -57,7 +57,7 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 	    System.out.println("danish"+classpath);
 	    System.out.print("danish"+classpath);
 		
-		em.setPersistenceXmlLocation("classpath*:META-INF/persistence.xml");
+		em.setPersistenceXmlLocation("classpath*:conf/persistence.xml");
 		//em.setPersistenceXmlLocation("persistence.xml");
 		em.setPersistenceUnitName("hibernatePersistenceUnit");
 		//System.out.println("Danish:"+em.getPersistenceXmlLocation());
