@@ -50,7 +50,7 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 		vendor.setShowSql(false);
 		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaa");
+		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
 		
 		String classpath = System.getProperty("java.class.path");
 	    System.out.println("danish"+classpath);
