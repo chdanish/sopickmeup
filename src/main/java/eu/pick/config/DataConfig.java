@@ -62,7 +62,7 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 
 		System.out.println("danishhhhhhhhhhhhhh"+persistencelocation);
 		
-		em.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
+		em.setPersistenceXmlLocation("classpath*:META-INF/persistence.xml");
 		em.setPersistenceUnitName("hibernatePersistenceUnit");
 		em.setDataSource(dataSource());
 		em.setJpaVendorAdapter(vendor);
