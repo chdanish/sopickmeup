@@ -1,5 +1,6 @@
 package eu.pick.config;
 
+import javax.servlet.ServletContext;
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,14 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories("eu.pick.repository")
+//@ImportResource({"classpath*:META-INF/persistence.xml"})
 
 public class DataConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired 
 	private Environment env;
+	@Autowired
+	private ServletContext servletContext;
 	
 	@Bean
 	public DataSource dataSource() {
@@ -50,19 +54,16 @@ public class DataConfig extends WebMvcConfigurerAdapter {
 		vendor.setShowSql(false);
 		
 		LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
 		System.out.print("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
-		System.err.print("saraaaaaaaaaaaaaaaaaaaaaaaaaa");
+		System.out.println("saraaaaaaaaaaaaaaaaaaaaaaaaqqaa");
+
+
+		String persistencelocation = servletContext.getRealPath("src/main/java/META-INF/persistence.xml");
+
+		System.out.println("danishhhhhhhhhhhhhh"+persistencelocation);
 		
-		String classpath = System.getProperty("java.class.path");
-	    System.out.println("danish"+classpath);
-	    System.out.print("danish"+classpath);
-	    System.err.print("danish"+classpath);
-		
-		em.setPersistenceXmlLocation("classpath*:META-INF/persistence.xml");
-		//em.setPersistenceXmlLocation("persistence.xml");
+		em.setPersistenceXmlLocation("classpath:META-INF/persistence.xml");
 		em.setPersistenceUnitName("hibernatePersistenceUnit");
-		//System.out.println("Danish:"+em.getPersistenceXmlLocation());
 		em.setDataSource(dataSource());
 		em.setJpaVendorAdapter(vendor);
 		return em;
