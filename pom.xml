@@ -54,7 +54,7 @@
 		<spring.data.jpa.version>1.2.0.RELEASE</spring.data.jpa.version>
 		<httpclient.version>4.3.3</httpclient.version>
 		
-		<!-- Spring Social -->
+		<!-- Spring Social dd-->
 		<spring.social.version>1.1.0.RELEASE</spring.social.version>
 		<spring.social.facebook.version>1.1.1.RELEASE</spring.social.facebook.version>
 		<spring.social.twitter.version>1.1.0.RELEASE</spring.social.twitter.version>
